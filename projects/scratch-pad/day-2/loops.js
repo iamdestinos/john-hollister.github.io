@@ -14,7 +14,8 @@ function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
   //iterate through input array
   for (var i = 0; i < array.length; i++) {
-    
+    //print value of input array
+    console.log(array[i]);
   }
   
   
@@ -28,7 +29,11 @@ function printArrayValues(array) {
  */
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
-  
+  //iterate through array from last value to first
+  for (var i = array.length - 1; i >= 0; i --) {
+    //print value of array
+    console.log(array[i]);
+  }
   
   
   
@@ -40,9 +45,15 @@ function printArrayValuesInReverse(array) {
  */
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+  //create var output as array
+  var output = [];
+  //iterate through object keys
+  for (var key in object) {
+    //push current key to array
+    output.push(key);
+  }
+  //return output
+  return output;
   
   // YOUR CODE ABOVE HERE //
 }
@@ -53,9 +64,11 @@ function getObjectKeys(object) {
  */
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+  //iterate through object keys
+  for(var key in object) {
+    //print key of object
+    console.log(key);
+  }
   
   // YOUR CODE ABOVE HERE //
 }
@@ -65,9 +78,15 @@ function printObjectKeys(object) {
  */
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+  //create var array output equal to empty array
+  var output = [];
+  //iterate through input object keys
+  for (var key in object) {
+    //push value of object key to output
+    output.push(object[key]);
+  }
+  //return output
+  return output;
   
   // YOUR CODE ABOVE HERE //
 }
@@ -78,9 +97,11 @@ function getObjectValues(object) {
  */
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+  //iterate through keys in object
+  for (var key in object) {
+    //print value of key in object
+    console.log(object[key]);
+  }
   
   // YOUR CODE ABOVE HERE //
 }
@@ -90,9 +111,15 @@ function printObjectValues(object) {
  */
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+  //create var count equal to 0
+  var count = 0;
+  //iterate through every key in object
+  for (var key in object) {
+    //increment count
+    count++;
+  }
+  //return count
+  return count;
   
   // YOUR CODE ABOVE HERE //
 }

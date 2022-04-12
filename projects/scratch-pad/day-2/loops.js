@@ -12,7 +12,10 @@
  */
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
-  
+  //iterate through input array
+  for (var i = 0; i < array.length; i++) {
+    
+  }
   
   
   

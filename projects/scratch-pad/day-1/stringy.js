@@ -175,7 +175,7 @@ function longest(stringOne, stringTwo) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    var output = stringOne.localeCompare(stringTwo);
+    var output = stringOne.localeCompare(stringTwo) * -1;
     return output;
 
     // YOUR CODE ABOVE HERE //
@@ -191,7 +191,7 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+    return stringOne.localeCompare(stringTwo);
 
 
 

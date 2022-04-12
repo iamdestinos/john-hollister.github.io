@@ -21,8 +21,22 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
+    /*
+    I: string
+    O: new string (reversed input string)
+    C:
+    E:
+    */
     
-    
+    //create var output equal to empty string
+    var output = "";
+    //iterate through each character in input string
+    for (var i = input.length - 1; i >= 0; i--) {
+      //add character from input string to output
+      output = output.concat(input[i]);
+    }
+    //return output
+    return output;
     
     
     // YOUR CODE GOES ABOVE HERE //

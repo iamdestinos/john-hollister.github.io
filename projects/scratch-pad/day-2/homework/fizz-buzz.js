@@ -12,7 +12,25 @@
 */
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
-
+    
+    function fizzBuzz() {
+        //print numbers from one to one hundred
+        for(var i = 1; i < 101; i++) {
+            // determine if number is multiple of five and three print FizzBuzz if true
+            if (i % 3 === 0 && i % 5 === 0) {
+                console.log("FizzBuzz");
+            } else if (i % 3 === 0) {
+                //determine if number is multiple od three then print Fizz if true
+                console.log("Fizz");
+            } else if (i % 5 === 0) {
+                //determine if number if multiple of five then print Buzz if true
+                console.log("Buzz");
+            } else {
+                //print number
+                console.log(i);
+            }
+        }
+    }
 
 
     // YOUR CODE GOES ABOVE HERE //

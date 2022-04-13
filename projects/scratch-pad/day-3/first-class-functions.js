@@ -13,8 +13,12 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
+    //I: a string or number
+    //O: function that tests if given value is greater than base
+    return function(value) {
+        var isGreater = base < value;
+        return isGreater;
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -27,8 +31,12 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
+    //I: string or number
+    //O: function that tests if value is less than base
+    return function(value) {
+        var isLess = base > value;
+        return isLess;
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -41,8 +49,16 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
+    //I: single character
+    //O: function that tests if given string has same character as input at start
+    return function(string) {
+        //determine if char startsWith shares char at start of string
+        if (startsWith.toLowerCase() == string[0].toLowerCase()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -55,8 +71,16 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
+    //I: single character
+    //O: function tests if string ends with input character
+    return function(string) {
+        //determine if char endsWith and last character in string ar same
+        if (string[string.length - 1].toLowerCase() == endsWith.toLowerCase()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     
     // YOUR CODE ABOVE HERE //

@@ -32,7 +32,6 @@ function fizzBuzz() {
         }
     }
 
-
     // YOUR CODE GOES ABOVE HERE //
 }
 

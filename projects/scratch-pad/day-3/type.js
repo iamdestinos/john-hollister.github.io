@@ -14,8 +14,9 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
-    
+    //I: any value
+    //O: boolean
+    return Array.isArray(value);
     
     
     // YOUR CODE ABOVE HERE //
@@ -32,6 +33,9 @@ function isArray(value) {
 function isObject(value) {
     // YOUR CODE BELOW HERE //
     
+    if (!Array.isArray(value) && value !== null) {
+        return Object.isObject(value);
+    }
     
     
     

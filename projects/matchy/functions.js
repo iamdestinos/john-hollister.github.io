@@ -73,6 +73,7 @@ function remove(animals, name) {
         //determine if string name is same as name property of current object
         if (name == animals[i].name) {
             //if true, remove current value of animals
+            animals.splice(i, 1);
         }
     }
 }
@@ -81,8 +82,41 @@ function remove(animals, name) {
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
+//declare function add
+/*
+I: array of objects, object
+O: N/A
+*/
+function add(animals, animal) {
+    //declare var nameExists and assign false
+    let nameExists = false;
+    //declare var speciesExist and assign false
+    let speciesExist = false;
+    //declare var nameUnique and assign true
+    let nameUnique = true;
+    //determine if animal has name property with length greater than 0
+    if (animal.name.length > 0) {
+        //if true reassign nameExists to true
+        nameExists = true;
+    }
+    //determine if animal has species property with length greater than 0
+    if (animal.species.length > 0) {
+        //if true reassign speciesExist to true
+        speciesExist = true;
+    }
+    //iterate through animals array
+    for (let i = 0; i < animals.length; i++) {
+        //determine if name property is shared with any object in animals
+        if (animals[i].name == animal.name) {
+            //if name property is shared reassign nameUnique to false
+            nameUnique = false;
+        }
+    }
+    //if all previous determine is true, add animal to animals
+    if (nameExists && speciesExist && nameUnique) {
+        animals.push(animal);
+    }
+}
 
 /**
  * You did it! You're all done with Matchy!

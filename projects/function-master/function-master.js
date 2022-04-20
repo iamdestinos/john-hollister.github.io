@@ -101,48 +101,110 @@ function capitalizeWord(string) {
 // Function 6 - Capitalize All Words /////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //take a string of words and return the string with all words capitalized
+/*
+I: string
+O: string
+*/
 function capitalizeAllWords(string) {
-    
+    //declare var output equal to input string split
+    var output = string.split(' ');
+    //iterate through output array
+    for (let i = 0; i < output.length; i++) {
+        //reassign current value to capitalizeWord output
+        output[i] = capitalizeWord(output[i]);
+    }
+    //return output joined
+    return output.join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 7 - Welcome Message //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//take an object with a name property and return 'Welcome <name>!'
+/*
+I: object
+O: string
+*/
 function welcomeMessage(object) {
-
+    // declare var output equal to 'Welcome <name>!'
+    var output = "Welcome ";
+    output += capitalizeWord(object.name);
+    output += '!';
+    //return output
+    return output;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 8 - Profile Info /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//take an object with a name and species property and return '<name> is a <species>'
 function profileInfo(object) {
-
+    //declare var output
+    var output = capitalizeWord(object.name);
+    output += ' is a ';
+    output += capitalizeWord(object.species);
+    //return output
+    return output;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 9 - Maybe Noises /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//take an object and if it has a noises array return it as a string with words separated by a space
+//if object does not have noises array return 'there are no noises'
+/*
+I: object
+O: string
+*/
 function maybeNoises(object) {
-
+    //determine if object has a noises property with a filled array
+    if (object.noises !== undefined && object.noises.length > 0) {
+        //if true, return noises property joined as a string
+        return object.noises.join(' ');
+    } else {
+        //if false return 'there are no noises'
+        return 'there are no noises';
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 10 - Has Words ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//take a string of words and return true if word is in string, otherwise return false
+/*
+I: two strings
+O: boolean
+*/
 function hasWord(string, word) {
-
+    //let words equal array of string values split by a space
+    let words = string.split(' ');
+    //let isWord equal false
+    let isWord = false;
+    //iterate through aray words
+    for (let i = 0; i < words.length; i++) {
+        //determine if current value of words is same as input word
+        if (words[i] == word) {
+            //if true change isWord to true
+            isWord = true;
+        }
+    }
+    //return isWord
+    return isWord;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 11 - Add Friend //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//take a name and object and add name to object's friends array then return object
+/*
+I: string and object
+O: object
+*/
 function addFriend (name, object) {
-
+    //add name to object's friends array
+    object.friends.push(name);
+    //return object
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////

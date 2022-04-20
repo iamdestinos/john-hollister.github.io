@@ -265,26 +265,67 @@ function nonFriends(name, array) {
 //take an object, a key, and a value. update the property key with value.
 //if key does not exist on object, create it
 /*
-
+I: object, two strings
+O: object
 */
 function updateObject(object, key, value) {
-
+    //update value
+    object[key] = value;
+    //return object
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 15 - Remove Properties ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//take an object and array of strings. remove an properties in object that are listed in array
+/*
+I: object and array of strings
+O: N/A
+*/
 function removeProperties(object, array) {
-
+    //iterate through array input
+    for (let i = 0; i < array.length; i++) {
+        //delete current property from object
+        delete object[array[i]];
+    }
+    
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//take an array and return with array with any duplicates removed
+/*
+I: array of values
+o: array of values 
+*/
 function dedup(array) {
-
+    //let output be equal to empty array
+    let output = [];
+    //iterate through input array
+    for (let i = 0; i < array.length; i++) {
+        //let repeat be false
+        let repeat = false;
+        //determine if output has at least one value
+        if (output.length > 0) {
+            //if true, iterate through output array
+            for (let j = 0; j < output.length; j++) {
+                //determine if current value of output is same as current value of array
+                if (array[i] == output[j]) {
+                    //if true, set repeat to true
+                    repeat = true;
+                }
+            }
+        }
+        //determine if repeat is false
+        if (repeat === false) {
+            //if repeat is false, add current value of array input to output
+            output.push(array[i]);
+        }
+    }
+    //return output
+    return output;
 }
 
 //////////////////////////////////////////////////////////////////////

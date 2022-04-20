@@ -1,47 +1,106 @@
 //////////////////////////////////////////////////////////////////////
 // Function 1 - Object Values ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//take an object and return its values in an array
+/*
+I: object
+O: array
+*/
 function objectValues(object) {
-
+    //declare var output as empty array
+    var output = [];
+    //iterate through object keys
+    for (let key in object) {
+        output.push(object[key]);
+    }
+    //return output
+    return output;
 } 
 
 //////////////////////////////////////////////////////////////////////
 // Function 2 - Keys to String ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//take an object and return all keys as a string separated by a space
+/*
+I: object
+O: string
+*/
 function keysToString(object) {
-
+    //create var output as empty array
+    var output = [];
+    //iterate through object keys
+    for (let key in object) {
+        //add key to output
+        output.push(key);
+    }
+    //return output and join output
+    return output.join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 3 - Values to String /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//take an object and return all key string values in a string separated by a space
+/*
+I: object
+O: string
+C: what if the object contains a key value that is not a string?
+*/
 function valuesToString(object) {
-    
+    //declare output var equal to empty array
+    var output = [];
+    //iterate through object
+    for (let key in object) {
+        //determine if key value is a string
+        if (typeof object[key] === 'string') {
+            //if true add key value to output
+            output.push(object[key]);
+        }
+    }
+    //return output and join output
+    return output.join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 4 - Array or Object //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//take one argument and return if input is an array or object
+/*
+I: an array or an object
+O: string
+*/
 function arrayOrObject(collection) {
-    
+    //determine if input collection is an array
+    if (Array.isArray(collection)) {
+        //if true return 'array'
+        return 'array';
+    } else {
+        //if not return 'object'
+        return 'object';
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 5 - Capitalize Word //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//take a string of one word and return it with first letter capitalized
+/*
+I: string
+O: string
+*/
 function capitalizeWord(string) {
-    
+    //declare var output equal to string.split
+    var output = string.split('');
+    //capitalize first letter in output array
+    output[0] = output[0].toUpperCase();
+    //return output joined together
+    return output.join('');
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 6 - Capitalize All Words /////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//take a string of words and return the string with all words capitalized
 function capitalizeAllWords(string) {
     
 }

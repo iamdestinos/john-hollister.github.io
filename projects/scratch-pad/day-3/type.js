@@ -33,8 +33,8 @@ function isArray(value) {
 function isObject(value) {
     // YOUR CODE BELOW HERE //
     
-    if (!Array.isArray(value) && value !== null) {
-        return Object.isObject(value);
+    if (!Array.isArray(value) && value !== null && typeOf(value) == 'object') {
+        return true;
     } else {
         return false;
     }
@@ -52,7 +52,7 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
+    //determine if value is either an array or object
     
     
     

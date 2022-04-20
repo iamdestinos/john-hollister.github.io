@@ -35,6 +35,8 @@ function isObject(value) {
     
     if (!Array.isArray(value) && value !== null) {
         return Object.isObject(value);
+    } else {
+        return false;
     }
     
     

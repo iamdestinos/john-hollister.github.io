@@ -210,23 +210,63 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 // Function 12 - Is Friend ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//take a name and object and return true if name is in friends, false otherwise
+/*
+I: string and object
+O: boolean
+*/
 function isFriend(name, object) {
-
+    //let friend be equal to false
+    let friend = false;
+    //determine if object has defined friends property
+    if (object.friends !== undefined) {
+        //iterate through object friends array
+        for (let i = 0; i < object.friends.length; i++) {
+            //determine if current value of array friends is same as name input
+            if (name == object.friends[i]) {
+                //if true, set friend to true
+                friend = true;
+            }
+        }
+    }
+    //return friend
+    return friend;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//take a name and list of people, return a list of all people name is not friends with
+/*
+I: string and array of objects
+O: array of strings
+*/
 function nonFriends(name, array) {
-
+    //let notFriends equal to empty array
+    let notFriends = [];
+    //iterate through input array
+    for (let i = 0; i < array.length; i++) {
+        //determine if name property is not same as name input
+        if (name !== array[i].name) {
+            //if true, determine if input name is not friends with current object person
+            if (!isFriend(name, array[i])) {
+                //add name to notFriends
+                notFriends.push(array[i].name);
+            } 
+        }
+    }
+    //return notFriends
+    return notFriends;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//take an object, a key, and a value. update the property key with value.
+//if key does not exist on object, create it
+/*
 
+*/
 function updateObject(object, key, value) {
 
 }

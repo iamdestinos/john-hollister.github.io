@@ -34,8 +34,19 @@
  */
 
 // YOUR CODE GOES BELOW HERE //
+/*
+I: three strings
+O: object
+*/
 function makeContact(id, nameFirst, nameLast) {
-
+    //create output object
+    var output = {
+        id: id,
+        nameFirst: nameFirst,
+        nameLast: nameLast
+    }
+    //return output
+    return output;
 } 
 
 
@@ -52,6 +63,47 @@ function makeContactList() {
         },
         addContact: function(contact) {
             contacts.push(contact);
+        },
+        //find contact take full name and return contact if found or undefined if not
+        findContact: function(fullName) {
+            //iterate through contacts array
+            for (var i = 0; i < contacts.length; i++) {
+                //create var contactName equal to current contact first and last name
+                var contactName = contacts[i].nameFirst + ' ' + contacts[i].nameLast;
+                //determine if full name is same as full name of current contact
+                if (fullName == contactName) {
+                    //if true return current contact
+                    return contacts[i];
+                }
+            }
+            //
+        },
+        //remove contact removes contact from array
+        removeContact: function(contact) {
+            //iterate through contacts array
+            for (var i = 0; i < contacts.length; i++) {
+                //determine if current contact is same as contact input
+                if (contact == contacts[i]) {
+                    //if true remove current contact in contacts array
+                    contacts.splice(i, 1);
+                }
+            }
+        },
+        //put full name of each contact in string
+        printAllContactNames: function() {
+            //create var string
+            var string = '';
+            //iterate through contacts array
+            for (var i = 0; i < contacts.length; i++) {
+                //add first and last name of current contact to string
+                string += contacts[i].nameFirst + ' ' + contacts[i].nameLast;
+                //determine if current contact is not last in array contacts
+                if (i !== contacts.length - 1) {
+                    string += '\n';
+                }
+            }
+            //return string
+            return string;
         }
     }
 }

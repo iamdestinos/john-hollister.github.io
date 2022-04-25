@@ -210,8 +210,22 @@ _.indexOf = function(array, value) {
 */
 
 /*
-
+I: array and value
+O: boolean
+E: what if no value is given
 */
+_.contains = function(array, value){
+    //iterate through input array
+    for(let i = 0; i < array.length; i++) {
+        //determine if current value in array is same as input value
+        if(array[i] === value) {
+            //if true, return true
+            return true;
+        }
+    }
+    //after iterating through loop return false
+    return false;
+};
 
 /** _.each
 * Arguments:
@@ -229,6 +243,9 @@ _.indexOf = function(array, value) {
 *      -> should log "a" "b" "c" to the console
 */
 
+/*
+
+*/
 
 /** _.unique
 * Arguments:

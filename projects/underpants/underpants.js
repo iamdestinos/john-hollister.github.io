@@ -275,8 +275,37 @@ _.each = function(collection, func){
 */
 
 /*
-
+I: array
+O: array
 */
+_.unique = function(array){
+    //create output array
+    var output = [];
+    //push first value in input array to output
+    output.push(array[0]);
+
+    //iterate through input array
+    for (let i = 0; i < array.length; i++) {
+        //var isUnique equals true
+        let isUnique = true;
+        //iterate through output array
+        for (let j = 0; j < output.length; j++) {
+            //determine if current value in i is same as current value in j
+            if(array[i] == output[j]) {
+                //if true, isUnique is false
+                isUnique = false;
+            }
+        }
+        //determine if isUnique is true
+        if(isUnique) {
+            //if true, add current value of array i to output
+            output.push(array[i]);
+        }
+    }
+
+    //return output
+    return output;
+};
 
 /** _.filter
 * Arguments:
@@ -294,6 +323,9 @@ _.each = function(collection, func){
 *   use _.each in your implementation
 */
 
+/*
+
+*/
 
 /** _.reject
 * Arguments:

@@ -177,8 +177,22 @@ _.last = function(array, number){
 */
 
 /*
-
+I: array and a value
+O: a number
+E: what if array has multiple occurances of value? what if value isn't in array?
 */
+_.indexOf = function(array, value) {
+    //iterate through input array
+    for (let i = 0; i < array.length; i++) {
+        //determine if current content of array equals value
+        if(array[i] == value) {
+            //if true, return value of i
+            return i;
+        }
+    }
+    //after going through loop return -1
+    return -1;
+};
 
 /** _.contains
 * Arguments:
@@ -195,6 +209,9 @@ _.last = function(array, number){
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
+/*
+
+*/
 
 /** _.each
 * Arguments:

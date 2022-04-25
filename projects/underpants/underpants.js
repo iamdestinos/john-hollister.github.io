@@ -133,13 +133,31 @@ E: what if number is negative? what if number is greater than array.length
 _.last = function(array, number){
     //create output array
     var output = [];
+
     //determine if input array is not an array
-
+    if(!Array.isArray(array)) {
+        return [];
+    }
     //determine if input number is not a number
-
+    if(typeof number !== 'number') {
+        return array[array.length - 1];
+    }
     //determine if input number is negative
-
+    if(number < 0) {
+        return [];
+    }
     //determine if input number is greater than array.length
+    if(number > array.length) {
+        return array;
+    }
+
+    //iterate through loop
+    for (let i = array.length - number; i < array.length; i++) {
+        //add current value to output array
+        output.push(array[i]);
+    }
+    //return output
+    return output;
 };
 
 /** _.indexOf
@@ -158,6 +176,9 @@ _.last = function(array, number){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+/*
+
+*/
 
 /** _.contains
 * Arguments:

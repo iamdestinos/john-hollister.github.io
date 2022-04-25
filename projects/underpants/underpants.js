@@ -244,8 +244,25 @@ _.contains = function(array, value){
 */
 
 /*
-
+I: collection and a function
+O: 
 */
+_.each = function(collection, func){
+    //determine if collection is an array
+    if(Array.isArray(collection)){
+        //if collection is an array call func for each element
+        //iterate through array
+        for (let i = 0; i < collection.length; i++) {
+            func(collection[i], i, collection);
+        }
+    } else {
+        //if collection is not an array treat like an obj
+        //go through func for each value
+        for (let key in collection) {
+            func(collection[key], key, collection);
+        }
+    }
+};
 
 /** _.unique
 * Arguments:
@@ -257,6 +274,9 @@ _.contains = function(array, value){
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+/*
+
+*/
 
 /** _.filter
 * Arguments:

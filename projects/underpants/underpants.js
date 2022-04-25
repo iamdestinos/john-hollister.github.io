@@ -21,6 +21,10 @@ var _ = {};
 *   _.identity({a: "b"}) === {a: "b"}
 */
 
+_.identity = function(value) {
+    return value;
+};
+
 
 /** _.typeOf
 * Arguments:
@@ -42,6 +46,10 @@ var _ = {};
 * _.typeOf([1,2,3]) -> "array"
 */
 
+_.typeOf = function(value) {
+
+};
+
 
 /** _.first
 * Arguments:
@@ -61,6 +69,24 @@ var _ = {};
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+/*
+I: array, number
+O: 
+E: What if number is negative? what if number is greater than array.length?
+*/
+_.first = function(array, number){
+    //determine if input array is not an array
+    if(!Array.isArray(array)) {
+        //if the input array is not an array, return []
+        return [];
+    }
+    //determine if input number is not a number
+    if(typeof number !== 'number') {
+        //if input number is not a number return first value of array
+        return array[0];
+    }
+    //determine if input number is a negative value
+};
 
 /** _.last
 * Arguments:

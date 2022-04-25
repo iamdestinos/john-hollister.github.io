@@ -75,6 +75,9 @@ O:
 E: What if number is negative? what if number is greater than array.length?
 */
 _.first = function(array, number){
+    //create output array
+    var output = [];
+
     //determine if input array is not an array
     if(!Array.isArray(array)) {
         //if the input array is not an array, return []
@@ -86,6 +89,22 @@ _.first = function(array, number){
         return array[0];
     }
     //determine if input number is a negative value
+    if(number < 0) {
+        //if number is a negative value return empty array
+        return [];
+    }
+    //determine if input number is greater than array.length
+    if(array.length < number) {
+        //if true return whole input array
+        return array;
+    }
+
+    //iterate from 0 to input number
+    for (let i = 0; i < number; i++) {
+        output.push(array[i]);
+    }
+    //return output
+    return output;
 };
 
 /** _.last
@@ -106,6 +125,22 @@ _.first = function(array, number){
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
+/*
+I: array and number
+O: array
+E: what if number is negative? what if number is greater than array.length
+*/
+_.last = function(array, number){
+    //create output array
+    var output = [];
+    //determine if input array is not an array
+
+    //determine if input number is not a number
+
+    //determine if input number is negative
+
+    //determine if input number is greater than array.length
+};
 
 /** _.indexOf
 * Arguments:

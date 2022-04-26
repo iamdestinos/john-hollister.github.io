@@ -377,6 +377,31 @@ _.unique = function(array){
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+/*
+
+*/
+_.map = function(collection, func) {
+    //create output var
+    var output = [];
+
+    //determine if input collection is an array
+    if(Array.isArray(collection)) {
+        //iterate using for loop
+        for (let i = 0; i < collection.length; i++) {
+            var result = func(collection[i], i, collection); //3 arguments
+            output.push(result);
+        }
+    } else {
+        //else it's an object
+        //iterate using for key in obj loop
+        for (let key in collection) {
+            output.push(func(collection[key], key, collection)); //3 arguments
+        }
+    }
+
+    //return output
+    return output;
+};
 
 /** _.pluck
 * Arguments:

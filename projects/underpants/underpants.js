@@ -46,6 +46,10 @@ _.identity = function(value) {
 * _.typeOf([1,2,3]) -> "array"
 */
 
+/*
+I: any value
+O: string
+*/
 _.typeOf = function(value) {
 
 };
@@ -414,6 +418,19 @@ _.map = function(collection, func) {
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+/*
+
+*/
+_.pluck = function(array, prop){
+    //invoke map on input array
+    let output = _.map(array, function(element){
+        // what should this function return?
+        return element[prop];
+    }); 
+
+    //return output
+    return output;
+};
 
 /** _.every
 * Arguments:

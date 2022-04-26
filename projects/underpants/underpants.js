@@ -381,8 +381,25 @@ _.filter = function(array, func){
 */
 
 /*
-
+I: array and function
+O: array of elements
 */
+_.reject = function(array, func){
+    //create var output
+    var output = [];
+
+    //iterate through array input using for loop
+    for(let i = 0; i < array.length; i++) {
+        //determine if function returned false
+        if(!func(array[i], i, array)) {
+            //if so, push value of input array to output
+            output.push(array[i]);
+        }
+    }
+
+    //return output
+    return output;
+};
 
 /** _.partition
 * Arguments:
@@ -403,6 +420,9 @@ _.filter = function(array, func){
 }
 */
 
+/*
+
+*/
 
 /** _.map
 * Arguments:

@@ -534,8 +534,53 @@ _.pluck = function(array, prop){
 */
 
 /*
-
+I: collection and a function
+O:
+E: what if function doesn't return boolean? what if function is not given?
 */
+_.every = function(collection, func){
+    //determine if collection is an array
+    if(Array.isArray(collection)) {
+        //if collection is an array iterate through with for loop
+        for (let i = 0; i < collection.length; i++) {
+            //determine if func is a function
+            if(typeof func === 'function') {
+                //if true
+                //determine if function returns false with current value of array
+                if(!func(collection[i], i, collection)) {
+                    //if false, return false
+                    return false;
+                }
+            } else {
+                //if func is not a function determine if current value is falsey
+                if(!collection[i]) {
+                    return false;
+                }
+            }
+        }
+    } else {
+        //if collection is an object iterate with a for key in obj loop
+        for (let key in collection) {
+            //determine if func is a function
+            if(typeof func === 'function') {
+                //if true
+                //determine if function returns false with current key
+                if(!func(collection[key], key, collection)) {
+                    //if false, return false
+                    return false;
+                }
+            } else {
+                //if func is not a function determine if current value is falsey
+                if(!collection[key]) {
+                    return false;
+                }
+            }
+        }
+    }
+
+    //return true if all else has passed
+    return true;
+};
 
 /** _.some
 * Arguments:
@@ -558,6 +603,9 @@ _.pluck = function(array, prop){
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 
+/*
+
+*/
 
 /** _.reduce
 * Arguments:

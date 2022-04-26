@@ -604,8 +604,51 @@ _.every = function(collection, func){
 */
 
 /*
-
+I: collection and function
+O: boolean
+E: what if function doesn't return a boolean? what if function is not given?
 */
+_.some = function(collection, func){
+    //determine if collection is an array
+    if(Array.isArray(collection)) {
+        //if true, iterate through collection using for loop
+        for(let i = 0; i < collection.length; i++) {
+            //determine if func is a function
+            if(typeof func === 'function') {
+                //if true, determine if func with current value returns true
+                if(func(collection[i], i, collection)) {
+                    //if func is true return true
+                    return true;
+                }
+            } else {
+                //if func is not a function determine if current value of collection is truthy
+                if(collection[i]) {
+                    return true;
+                }
+            }
+        }
+    } else {
+        //if collection is an object, iterate through collection using for key in obj loop
+        for(let key in collection) {
+            //determine if func is a function
+            if(typeof func === 'function') {
+                //if true, determine if current value in func is true
+                if(func(collection[key], key, collection)) {
+                    //if func is true return true
+                    return true;
+                }
+            } else {
+                //if func is not a function determine if current value of collection is truthy
+                if(collection[key]) {
+                    return true;
+                }
+            }
+        }
+    }
+
+    //return false if all else passes
+    return false;
+};
 
 /** _.reduce
 * Arguments:
@@ -626,6 +669,9 @@ _.every = function(collection, func){
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+/*
+
+*/
 
 /** _.extend
 * Arguments:

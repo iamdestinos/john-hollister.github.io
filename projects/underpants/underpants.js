@@ -421,8 +421,29 @@ _.reject = function(array, func){
 */
 
 /*
-
+I: array and function
+O: array of arrays
+E: will be array of arrays
 */
+_.partition = function(array, func){
+    //create var output as an array containing two arrays
+    var output = [[], []];
+
+    //iterate through array input using for loop
+    for (let i = 0; i < array.length; i++) {
+        //determine if func returns true
+        if(func(array[i], i, array)) {
+            //if true, push current value to first array in output array
+            output[0].push(array[i]);
+        } else {
+            //if false, push current value to second array in output array
+            output[1].push(array[i]);
+        }
+    }
+
+    //return output
+    return output;
+};
 
 /** _.map
 * Arguments:
@@ -512,6 +533,9 @@ _.pluck = function(array, prop){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+/*
+
+*/
 
 /** _.some
 * Arguments:

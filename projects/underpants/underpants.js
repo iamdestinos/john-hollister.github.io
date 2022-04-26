@@ -51,7 +51,25 @@ I: any value
 O: string
 */
 _.typeOf = function(value) {
-
+    //determine if value is undefined
+    if(value === undefined) {
+        return 'undefined';
+    }
+    //determine if value is null
+    else if(value === null) {
+        return 'null';
+    }
+    //determine if value is an array
+    else if(Array.isArray(value)) {
+        return 'array';
+    }
+    //determine if value is an object
+    else if(typeof value === 'object' && !(value instanceof Date)) {
+        return 'object';
+    } else {
+        //use typeof for rest of checks
+        return typeof value;
+    }
 };
 
 

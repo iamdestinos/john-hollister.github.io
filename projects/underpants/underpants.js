@@ -346,8 +346,26 @@ _.unique = function(array){
 */
 
 /*
-
+I: array and function
+O: array of elements
+E: what if function returns something other than true or false?
 */
+_.filter = function(array, func){
+    //create var output
+    var output = [];
+
+    //iterate through array using for loop
+    for (let i = 0; i < array.length; i++) {
+        //determine if function returns true
+        if(func(array[i], i, array)) {
+            //if true, push current element in input array to output array
+            output.push(array[i]);
+        }
+    }
+
+    //return output
+    return output;
+};
 
 /** _.reject
 * Arguments:
@@ -362,6 +380,9 @@ _.unique = function(array){
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
+/*
+
+*/
 
 /** _.partition
 * Arguments:

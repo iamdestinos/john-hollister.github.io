@@ -670,8 +670,13 @@ _.some = function(collection, func){
 */
 
 /*
-
+I: array, function, seed
+O: 
+E: what if seed is not given?
 */
+_.reduce = function(array, func, seed) {
+    //
+};
 
 /** _.extend
 * Arguments:
@@ -686,6 +691,11 @@ _.some = function(collection, func){
 *   var data = {a:"one"};
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
+*/
+
+/*
+I: two or more objects
+O: first object
 */
 
 //////////////////////////////////////////////////////////////////////

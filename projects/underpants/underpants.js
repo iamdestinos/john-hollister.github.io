@@ -675,7 +675,23 @@ O:
 E: what if seed is not given?
 */
 _.reduce = function(array, func, seed) {
-    //
+    //determine if seed value exists
+    if(seed !== undefined) {
+        //if true, iterate from start of array to end of it
+        for(let i = 0; i < array.length; i++) {
+            //
+            seed = func(seed, array[i], i, array);
+        }
+    } else {
+        //if false, start from second place of array to end
+        seed = array[0];
+        for(let i = 1; i < array.length; i++) {
+            seed = func(seed, array[i], i, array);
+        }
+    }
+
+    //return seed
+    return seed
 };
 
 /** _.extend

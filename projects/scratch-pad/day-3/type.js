@@ -53,7 +53,11 @@ function isObject(value) {
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
     //determine if value is either an array or object
-    
+    if(Array.isArray(value) || isObject(value)) {
+        return true;
+    } else {
+        return false;
+    }
     
     
     // YOUR CODE ABOVE HERE //

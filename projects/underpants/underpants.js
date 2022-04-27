@@ -714,6 +714,20 @@ I: two or more objects
 O: first object
 */
 
+_.extend = function(obj1){
+    //create output var equal to obj 1
+    var output = obj1;
+    
+    //iterate through arguments
+    for(let i = 1; i < arguments.length; i++) {
+        //assign current argument to output
+        Object.assign(output, arguments[i]); 
+    }
+    
+    //return output
+    return output;
+};
+
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////

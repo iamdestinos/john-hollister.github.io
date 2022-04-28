@@ -167,7 +167,27 @@ var friendFirstLetterCount = function(array, customer, letter){
     return count;
 };
 
-var friendsCount;
+/*
+I: array, string
+O: array
+*/
+var friendsCount = function(array, name){
+    //invoke reduce on input array
+    let friends = _.reduce(array, function(accumulator, current, index, collection){
+        //iterate through current objects friends array
+        for(let i = 0; current.friends.length; i++) {
+            //determine if current friends name is same as input name
+            if(current.friends[i].name == name) {
+                //if true, add current name property to accumulator array
+                accumulator.push(current.name);
+            }
+            return accumulator;
+        }
+    }, []);
+
+    //return friends
+    return friends;
+};
 
 var topThreeTags;
 

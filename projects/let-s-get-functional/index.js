@@ -108,16 +108,15 @@ var averageBalance = function(array){
         }
         //reassign balance to joined array
         balance = balance.join('');
-        console.log(balance);
+        //reassign balance to number using Number method
+        balance = Number(balance);
 
         //add current object balance to accumulator
-        accumulator += current.balance;
+        accumulator += balance;
         return accumulator;
     }, 0);
-    console.log(totalBal);
     //var avgBal is equal to totalBal divided by array length
     let avgBal = totalBal / array.length;
-    console.log(avgBal);
     //return avgBal
     return avgBal;
 };

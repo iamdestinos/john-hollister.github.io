@@ -145,11 +145,26 @@ var firstLetterCount = function(array, char){
 I: array, string, character
 O: number
 */
-var friendFirstLetterCount = function(array, customer, name){
+var friendFirstLetterCount = function(array, customer, letter){
     //invoke reduce on input array
     let count = _.reduce(array, function(accumulator, current, index, collection){
+        //determine if current object name is equal to customer
+        if(current.name = customer) {
+            //if true, iterate through current objects friends array
+            for(let i = 0; i < current.friends.length; i++) {
+                //determine if current friend name starts with input letter
+                if(current.friends[i].name[0].toLowerCase() == letter) {
+                    //if true, increment accumulator
+                    accumulator++;
+                }
+            }
+        }
+        //return accumulator
+        return accumulator;
+    }, 0);
 
-    });
+    //return count;
+    return count;
 };
 
 var friendsCount;

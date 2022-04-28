@@ -117,7 +117,7 @@ var firstLetterCount = function(array, char){
     //invoke reduce on input array
     let count = _.reduce(array, function(accumulator, current, index, collection){
         //determine if current object name properties first char is equal to char
-        if(current.name[0] == char) {
+        if(current.name[0].toLowerCase() == char.toLowerCase()) {
             //if true increment accumulator
             accumulator++;
         }

@@ -149,7 +149,7 @@ var friendFirstLetterCount = function(array, customer, letter){
     //invoke reduce on input array
     let count = _.reduce(array, function(accumulator, current, index, collection){
         //determine if current object name is equal to customer
-        if(current.name = customer) {
+        if(current.name === customer) {
             //if true, iterate through current objects friends array
             for(let i = 0; i < current.friends.length; i++) {
                 //determine if current friend name starts with input letter

@@ -69,10 +69,26 @@ var oldestCustomer = function(array){
     });
 
     //return oldest
-    return oldest;
+    return oldest.name;
 };
 
-var youngestCustomer;
+/*
+I: array
+O: string
+*/
+var youngestCustomer = function(array){
+    //invoke reduce function on input array
+    let youngest = _.reduce(array, function(accumulator, current, index, collection){
+        //determine if current age property is less than accumulator age property
+        if(current.age < accumulator.age) {
+            accumulator = current;
+        }
+        return accumulator;
+    });
+
+    //return youngest name property
+    return youngest.name;
+};
 
 var averageBalance;
 

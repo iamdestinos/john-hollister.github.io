@@ -14,3 +14,7 @@
 6) in terminal -> sudo apt-get install subversion
 7) in terminal -> npm install -g opspark
 8) in terminal -> os install
+
+## How to Test Let's Get Functional
+1) cd into workspace
+2) npm start --prefix ./john-hollister.github.io/projects/let-s-get-functional

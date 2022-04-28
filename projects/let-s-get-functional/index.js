@@ -103,12 +103,30 @@ var averageBalance = function(array){
 
     //var avgBal is equal to totalBal divided by array length
     let avgBal = totalBal / array.length;
-
+    console.log(avgBal);
     //return avgBal
     return avgBal;
 };
+averageBalance(customers);
 
-var firstLetterCount;
+/*
+I: array and char
+O: number
+*/
+var firstLetterCount = function(array, char){
+    //invoke reduce on input array
+    let count = _.reduce(array, function(accumulator, current, index, collection){
+        //determine if current object name properties first char is equal to char
+        if(current.name[0] == char) {
+            //if true increment accumulator
+            accumulator++;
+        }
+        return accumulator;
+    }, 0);
+
+    //return count
+    return count;
+};
 
 var friendFirstLetterCount;
 

@@ -53,7 +53,24 @@ var femaleCount = function(array) {
     return numFemales;
 };
 
-var oldestCustomer;
+/*
+I:
+O:
+*/
+var oldestCustomer = function(array){
+    //invoke reduce function on input array
+    let oldest = _.reduce(array, function(accumulator, current, index, collection){
+        //determine if the current object age property is greater than accumulator's age property
+        if(current.age > accumulator.age) {
+            //
+            accumulator = current;
+        }
+        return accumulator;
+    });
+
+    //return oldest
+    return oldest;
+};
 
 var youngestCustomer;
 

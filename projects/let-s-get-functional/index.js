@@ -153,7 +153,7 @@ var friendFirstLetterCount = function(array, customer, letter){
             //if true, iterate through current objects friends array
             for(let i = 0; i < current.friends.length; i++) {
                 //determine if current friend name starts with input letter
-                if(current.friends[i].name[0].toLowerCase() == letter) {
+                if(current.friends[i].name[0].toLowerCase() == letter.toLowerCase()) {
                     //if true, increment accumulator
                     accumulator++;
                 }

@@ -34,8 +34,23 @@ var maleCount = function(array) { //use filter function
     return males.length;
 };
 
-var femaleCount = function() {
+/*
+I: array
+O: number
+C: use reduce function
+*/
+var femaleCount = function(array) {
+    //var females equals reduce function
+    let numFemales = _.reduce(array, function(accumulator, current, index, collection){
+        //determine if current is female
+        if(current.gender === 'female'){
+            accumulator += 1;
+        }
+        return accumulator;
+    }, 0);
 
+    //return numFemales
+    return numFemales;
 };
 
 var oldestCustomer;

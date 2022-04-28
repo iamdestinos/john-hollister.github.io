@@ -97,10 +97,24 @@ O: number
 var averageBalance = function(array){
     //invoke reduce on input array
     let totalBal =  _.reduce(array, function(accumulator, current, index, collection){
+        //var balance is equal to empty array
+        let balance = [];
+        //iterate through current balance using for loop
+        for(let i = 1; i < current.balance.length; i++) {
+            //determine if current char is not a ,
+            if(current.balance[i] !== ',') {
+                balance.push(current.balance[i]);
+            }
+        }
+        //reassign balance to joined array
+        balance = balance.join('');
+        console.log(balance);
+
         //add current object balance to accumulator
         accumulator += current.balance;
+        return accumulator;
     }, 0);
-
+    console.log(totalBal);
     //var avgBal is equal to totalBal divided by array length
     let avgBal = totalBal / array.length;
     console.log(avgBal);
@@ -128,7 +142,16 @@ var firstLetterCount = function(array, char){
     return count;
 };
 
-var friendFirstLetterCount;
+/*
+I: array, string, character
+O: number
+*/
+var friendFirstLetterCount = function(array, customer, name){
+    //invoke reduce on input array
+    let count = _.reduce(array, function(accumulator, current, index, collection){
+
+    });
+};
 
 var friendsCount;
 

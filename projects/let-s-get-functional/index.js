@@ -90,7 +90,23 @@ var youngestCustomer = function(array){
     return youngest.name;
 };
 
-var averageBalance;
+/*
+I: array
+O: number
+*/
+var averageBalance = function(array){
+    //invoke reduce on input array
+    let totalBal =  _.reduce(array, function(accumulator, current, index, collection){
+        //add current object balance to accumulator
+        accumulator += current.balance;
+    }, 0);
+
+    //var avgBal is equal to totalBal divided by array length
+    let avgBal = totalBal / array.length;
+
+    //return avgBal
+    return avgBal;
+};
 
 var firstLetterCount;
 

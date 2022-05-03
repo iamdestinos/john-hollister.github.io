@@ -176,7 +176,21 @@ var modulo = function(x, y) {
 // 12. Write a function that multiplies two numbers without using the * operator  or
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
-var multiply = function(x, y) {
+var multiply = function(x, y, count=1) {
+  if(x === 0 || y === 0){
+    return 0;
+  }
+  if(count === y && x >= y){
+    return x;
+  } else if(count === x && x < y){
+    return y;
+  }
+
+  if(x >= y){
+    return x + multiply(x,y, count + 1);  
+  } else if(y > x){
+    return y + multiply(x, y, count + 1);
+  }
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or
@@ -198,6 +212,9 @@ var gcd = function(x, y) {
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
+  //base
+
+  //recursion
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter

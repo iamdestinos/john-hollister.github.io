@@ -132,11 +132,37 @@ var powerOfTwo = function(n) {
 };
 
 // 9. Write a function that accepts a string a reverses it.
-var reverse = function(string) {
+var reverse = function(string, output=[]) {
+  //base
+  if(!string.length){
+    return output.join('');
+  }
+  //recursion
+  output.unshift(string[0]);
+  return reverse(string.slice(1), output);
 };
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  //base
+  if(!string.length){
+    return true;
+  }
+  //recursion
+  let noSpace = string.split('');
+  for(let i = 0; i < noSpace.length; i++){
+    if(noSpace[i] === ' '){
+      noSpace.splice(i, 1);
+    }
+  }
+  string = noSpace.join('');
+  if(string[0].toLowerCase() != string[string.length - 1].toLowerCase()){
+    return false;
+  }
+  let test = string.split('');
+  test.pop();
+  test.shift();
+  return palindrome(test.join(''));
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the

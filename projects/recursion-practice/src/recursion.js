@@ -110,7 +110,7 @@ var exponent = function(base, exp, product=base) {
   if(exp > 0){
     return exponent(base, exp - 1, product * base);
   } else {
-    return exponent(base, exp + 1, product * (1/base));
+    return exponent(base, exp + 1, product * (1 / base));
   }
 };
 
@@ -119,6 +119,16 @@ var exponent = function(base, exp, product=base) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+  //base
+  if(n === 1){
+    return true;
+  } else if(n > 0 && n < 2){
+    return false;
+  } else if(n === 0){
+    return false;
+  }
+  //recursion
+  return powerOfTwo(n / 2);
 };
 
 // 9. Write a function that accepts a string a reverses it.

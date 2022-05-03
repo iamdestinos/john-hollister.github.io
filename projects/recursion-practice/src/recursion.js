@@ -319,7 +319,16 @@ var fibonacci = function(n) {
 // nthFibo(5); // 5
 // nthFibo(7); // 13
 // nthFibo(3); // 2
-var nthFibo = function(n) {
+var nthFibo = function(n, arr=[0, 1]) {
+  //base
+  if(n < 0){
+    return null;
+  } else if(arr.length > n){
+    return arr[n];
+  }
+  //recursion
+  arr[arr.length] = arr[arr.length - 2] + arr[arr.length - 1];
+  return nthFibo(n, arr);
 };
 
 // 26. Given an array of words, return a new array containing each word capitalized.

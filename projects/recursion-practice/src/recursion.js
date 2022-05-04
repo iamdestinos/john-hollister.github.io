@@ -110,7 +110,7 @@ var exponent = function(base, exp, product=base) {
   if(exp > 0){
     return exponent(base, exp - 1, product * base);
   } else {
-    return exponent(base, exp + 1, product * (1 / base));
+    return exponent(base, exp + 1, (1 / product) * (1 / base));
   }
 };
 
@@ -187,9 +187,17 @@ var multiply = function(x, y, count=1) {
   }
 
   if(x >= y){
-    return x + multiply(x,y, count + 1);  
+    if(y > 0){
+      return x + multiply(x,y, count + 1); 
+    } else if(y < 0){
+      return x + multiply(x,y, count - 1); 
+    } 
   } else if(y > x){
-    return y + multiply(x, y, count + 1);
+    if(x > 0){
+      return y + multiply(x, y, count + 1);
+    } else if(x < 0){
+      return y + multiply(x, y, count - 1);
+    }
   }
 };
 
@@ -464,7 +472,46 @@ var alternateSign = function(array, output=[]) {
 // 35. Given a string, return a string with digits converted to their word equivalent.
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
-var numToText = function(str) {
+var numToText = function(str, strOut='') {
+  //base
+  if(!str.length){
+    return strOut;
+  }
+  //recursion
+  let output = str.split(' ');
+  
+  if(output[0] == '0'){
+    output[0] = 'zero';
+  } else if(output[0] == '1'){
+    output[0] = 'one';
+  } else if(output[0] == '2'){
+    output[0] = 'two';
+  } else if(output[0] == '3'){
+    output[0] = 'three';
+  } else if(output[0] == '4'){
+    output[0] = 'four';
+  } else if(output[0] == '5'){
+    output[0] = 'five';
+  } else if(output[0] == '6'){
+    output[0] = 'six';
+  } else if(output[0] == '7'){
+    output[0] = 'seven';
+  } else if(output[0] == '8'){
+    output[0] = 'eight';
+  } else if(output[0] == '9'){
+    output[0] = 'nine';
+  }
+  
+  if(output.length > 1){
+    strOut += output[0] + ' ';
+  } else {
+    strOut += output[0];
+  }
+
+  output = output.slice(1);
+  output.join(' ');
+
+  return numToText(output, strOut);
 };
 
 // *** EXTRA CREDIT ***

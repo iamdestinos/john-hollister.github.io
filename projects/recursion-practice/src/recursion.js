@@ -101,7 +101,7 @@ var range = function(x, y, output=[]) {
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function(base, exp, product=base) {
   //base
-  if(exp === 1){
+  if(exp === 1 || exp === -1){
     return product;
   } else if(exp === 0){
     return 1;

@@ -110,7 +110,11 @@ var exponent = function(base, exp, product=base) {
   if(exp > 0){
     return exponent(base, exp - 1, product * base);
   } else {
-    return exponent(base, exp + 1, (1 / product) * (1 / base));
+    if(product > 0){
+      return exponent(base, exp + 1, (1 / product) * (1 / base));
+    } else {
+      return exponent(base, exp + 1, product * (1 / base));
+    }
   }
 };
 

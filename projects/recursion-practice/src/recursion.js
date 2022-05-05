@@ -101,6 +101,25 @@ var range = function(x, y, output=[]) {
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function(base, exp, product=base) {
   //base
+  if(exp === 0){
+    return 1;
+  } else if(exp === 1){
+    return base;
+  } else if(exp === -1){
+    return (1 / base);
+  }
+
+  //recursion
+  //determine if exp is positive
+  if(exp > 0){
+    return base * exponent(base, exp - 1);
+  } else if(exp < 0){
+    //if exp is negative
+    return (1 / base) * exponent(base, exp + 1);
+  }
+
+  /*
+  //base
   if(exp === 1 || exp === -1){
     return product;
   } else if(exp === 0){
@@ -116,6 +135,7 @@ var exponent = function(base, exp, product=base) {
       return exponent(base, exp + 1, product * (1 / base));
     }
   }
+  */
 };
 
 // 8. Determine if a number is a power of two.

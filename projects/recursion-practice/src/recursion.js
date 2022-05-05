@@ -181,6 +181,32 @@ var modulo = function(x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y, count=1) {
+  if(count == y || count == -y){
+    return x;
+  }
+
+  
+  if(x > 0 && y > 0){
+    return x + multiply(x, y, count + 1);
+  }
+
+  if(x < 0 && y < 0){
+    return -(x) + multiply(x, y, count + 1);
+  }
+
+  if(x< 0){
+    return x + multiply(x, y, count + 1);
+  }
+
+  if(y < 0){
+    let temp = y;
+    y = x;
+    x = temp;
+    return x + multiply(x, y, count + 1);
+  }
+};
+
+/*
   if(x === 0 || y === 0){
     return 0;
   }
@@ -203,7 +229,7 @@ var multiply = function(x, y, count=1) {
       return y + multiply(x, y, count - 1);
     }
   }
-};
+  */
 
 // 13. Write a function that divides two numbers without using the / operator  or
 // JavaScript's Math object.
@@ -513,7 +539,7 @@ var numToText = function(str, strOut='') {
   }
 
   output = output.slice(1);
-  output.join(' ');
+  output = output.join(' ');
 
   return numToText(output, strOut);
 };

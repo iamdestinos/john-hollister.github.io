@@ -34,8 +34,16 @@ function reverseArrayInPlace() {
 // arrayToList /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function arrayToList() {
+function arrayToList(array) {
+  //create rest value
+  let rest = null;
+  //iterate backwards through input array
+  for(let i = array.length - 1; i >= 0; i--){
+    //reassign the value of rest to an object with a key of value set to the current item in the array and a key of rest set to the current value of rest
+    rest = {value: array[i], rest: rest};
+  }
 
+  return rest;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

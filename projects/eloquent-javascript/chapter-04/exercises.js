@@ -50,8 +50,16 @@ function arrayToList(array) {
 // listToArray /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function listToArray() {
-
+function listToArray(list, arr=[]) {
+  //base
+  if(list.rest === null){
+    arr.push(list.value);
+    return arr;
+  }
+  //recursion
+  //accessing current value propertyand adding it to arr
+  arr.push(list.value);
+  return listToArray(list.rest,arr);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

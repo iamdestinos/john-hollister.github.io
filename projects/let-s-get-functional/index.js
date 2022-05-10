@@ -189,7 +189,30 @@ var friendsCount = function(array, name){
     return friends;
 };
 
-var topThreeTags;
+var topThreeTags = function(array){
+    //let tags be empty object
+    var tags = {};
+    //iterate through input array
+    for(let i = 0; i < array.length; i++){
+        //iterate through tags array in current object
+        for(let j = 0; j < array[i].tags; j++){
+            //determine if current tag exists in tags object
+            if(!tags[array[i].tags[j]]){
+                //if true, create prop in tags equal to one
+                tags[array[i].tags[j]] = 1;
+            }  else {
+                //else add one to prop in tags
+                tags[array[i].tags[j]]++;
+            }
+        }
+    }
+    //iterate through tags object
+    for(let key in tags){
+        //
+    }
+    console.log(tags);
+};
+console.log(topThreeTags(customers));
 
 var genderCount;
 

@@ -210,11 +210,20 @@ var topThreeTags = function(array){
     for(let key in tags){
         //
     }
-    console.log(tags);
 };
-console.log(topThreeTags(customers));
 
-var genderCount;
+var genderCount = function(array){
+    let output = array.reduce(function(accumulator, current, index, collection){
+        //determine if current gender is a named prop in accumulator
+        if(accumulator[current.gender]){
+            accumulator[current.gender]++;
+        } else {
+            accumulator[current.gender] = 1;
+        }
+        return accumulator;
+    }, {});
+    return output;
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

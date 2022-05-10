@@ -13,7 +13,7 @@
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
     
-    function fizzBuzz() {
+    
         //print numbers from one to one hundred
         for(var i = 1; i < 101; i++) {
             // determine if number is multiple of five and three print FizzBuzz if true
@@ -30,7 +30,7 @@ function fizzBuzz() {
                 console.log(i);
             }
         }
-    }
+    
 
     // YOUR CODE GOES ABOVE HERE //
 }

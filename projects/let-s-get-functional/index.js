@@ -174,6 +174,7 @@ O: array
 var friendsCount = function(array, name){
     //invoke reduce on input array
     let friends = _.reduce(array, function(accumulator, current, index, collection){
+        
         //iterate through current objects friends array
         for(let i = 0; current.friends.length; i++) {
             //determine if current friends name is same as input name
@@ -183,6 +184,7 @@ var friendsCount = function(array, name){
             }
             return accumulator;
         }
+        
     }, []);
 
     //return friends

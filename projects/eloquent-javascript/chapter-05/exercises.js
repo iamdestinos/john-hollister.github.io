@@ -26,8 +26,31 @@ function every() {
 // dominantDirection ///////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function dominantDirection() {
+function dominantDirection(string) {
+  //replace spaces with empty strings
+  let newStr = string.replace(/\s/g, '');
+  //create two arrays to store the number of writing directions
+  let ltr = [];
+  let rtl = [];
 
+  //iterate through newStr
+  for(let i = 0; i < newStr.length; i++){
+    let scriptName = characterScript(newStr.charCodeAt(i));
+    //determine if scriptName is not equal to null
+    if(scriptName !== null){
+      if(scriptName.direction === 'ltr'){
+        ltr.push(scriptName);
+      } else {
+        rtl.push(scriptName);
+      }
+    }
+  }
+
+  if(ltr.length > rtl.length){
+    return 'ltr';
+  } else {
+    return 'rtl';
+  }
 }
 
 // /////////////////////////////////////////////////////////////////////////////

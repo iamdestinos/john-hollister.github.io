@@ -174,7 +174,15 @@ O: array
 var friendsCount = function(array, name){
     //invoke reduce on input array
     let friends = _.reduce(array, function(accumulator, current, index, collection){
-        
+        let friendsList = [];
+        for(let i = 0; i < current.friends.length; i++){
+            friendsList.push(current.friends.name);
+        }
+        if(friendsList.includes(name)){
+            accumulator.push(current.name);
+        }
+        return accumulator;
+        /*
         //iterate through current objects friends array
         for(let i = 0; current.friends.length; i++) {
             //determine if current friends name is same as input name
@@ -184,7 +192,7 @@ var friendsCount = function(array, name){
             }
             return accumulator;
         }
-        
+        */
     }, []);
 
     //return friends
@@ -193,25 +201,61 @@ var friendsCount = function(array, name){
 
 var topThreeTags = function(array){
     //let tags be empty object
-    var tags = {};
+    var tag = array.reduce(function(accumulator, current, index, collection){
+        //iterate through current object's tags
+        for(let i = 0; i < current.tags.length; i++){
+            //determine if accumulator has a key named current tag
+            if(accumulator[current.tags[i]]){
+                accumulator[current.tags[i]] += 1;
+            } else {
+                accumulator[current.tags[i]] = 1;
+            }
+        }
+        return accumulator;
+    }, {});
+    //variables of top 3 tags
+    let first = array[0].tags[0];
+    let second = array[0].tags[0];
+    let third = array[0].tags[0];
+
+    /*
     //iterate through input array
     for(let i = 0; i < array.length; i++){
         //iterate through tags array in current object
         for(let j = 0; j < array[i].tags; j++){
             //determine if current tag exists in tags object
-            if(!tags[array[i].tags[j]]){
+            if(!tag[array[i].tags[j]]){
                 //if true, create prop in tags equal to one
-                tags[array[i].tags[j]] = 1;
+                tag[array[i].tags[j]] = 1;
             }  else {
                 //else add one to prop in tags
-                tags[array[i].tags[j]]++;
+                tag[array[i].tags[j]]++;
             }
         }
     }
+    */
+
     //iterate through tags object
-    for(let key in tags){
-        //
+    for(let key in tag){
+        if(tag[key] > tag[first]){
+            first = key;
+        }
     }
+    for(let key in tag){
+        if(tag[key] >= tag[second] && key !== first){
+            second = key;
+        }
+    }
+    for(let key in tag){
+        if(tag[key] >= tag[third] && key !== first && key !== second){
+            third = key;
+        }
+    }
+
+    //put three tag variables into an array
+    let output = [first, second, third];
+
+    return output;
 };
 
 var genderCount = function(array){

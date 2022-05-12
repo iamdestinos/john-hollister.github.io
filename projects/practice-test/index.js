@@ -153,4 +153,9 @@ var firstInClass = function(array, output={}){
 
 
 // 7.
-var votes;
+var votes = dogs.reduce(function(accumulator, current, index, collection){
+    //add current object votes to accumulator
+    accumulator += current.votes;
+
+    return accumulator;
+}, 0);

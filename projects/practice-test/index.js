@@ -136,7 +136,19 @@ var dogsWithClasses = dogContestants.map(function(dog){
 
 
 // 6.
-var firstInClass;
+var firstInClass = function(array, output={}){
+    //base
+    if(!array.length){
+        return output;
+    }
+    //reduce
+    //iterate through first object in array
+    for(let key in array[0]){
+        //add key value pair to output obj
+        output[key] = key;
+    }
+    return firstInClass(array.slice(1), output);
+};
 
 
 

@@ -88,27 +88,50 @@ let dogs = [
 ]
 
 // 1.
-var greeting;
+var greeting = function(greeting, location, time){
+    //log to console
+    console.log(greeting + ' ' + location + ' ' + time);
+};
 
 
 
 // 2.
-var contestants;
+var contestants = function(array){
+    return array.length;
+};
 
 
 
 // 3.
-var filterSpecies;
+var filterSpecies = dogs.filter(function(dog){
+    //determine if current object species is dog
+    if(dog.species === 'dog'){
+        return true;
+    } else {
+        return false;
+    }
+});
 
 
 
 // 4. 
-var dogContestants;
+var dogContestants = [...filterSpecies];
 
 
 
 // 5. 
-var dogsWithClasses;
+var dogsWithClasses = dogContestants.map(function(dog){
+    //determine weight class of current dog
+    if(dog.weight > 0 && dog.weight <= 10){
+        dog.class = 'red';
+    } else if(dog.weight >= 11 && dog.weight <= 20){
+        dog.class = 'yellow';
+    } else if(dog.weight >=21){
+        dog.class = 'green';
+    }
+
+    return dog;
+});
     
 
 

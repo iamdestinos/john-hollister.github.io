@@ -73,8 +73,8 @@ if(true){
 console.log(example2); //will cause error example2 does not exist
 // Secondly, a variable declared with let or const
 // cannot be redeclared like a variable using var.
-let d = 1;
-let d = true; //will cause an error
+//let d = 1;
+//let d = true; //will cause an error
 // The const keyword also has a unique feature where
 // it cannot be reassigned at all
 const ex = 'This variable cannot be reassigned';

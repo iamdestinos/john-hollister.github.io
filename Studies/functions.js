@@ -1,7 +1,7 @@
 /**
  * FUNCTIONS:
  * 
- * 0.
+ * 0. Functions are blocks of code that are designed to carry out a particular task and will be executed when called upon
  * 
  * 1. First a function must be defined before it can be executed or called on by invoking it.
  * 
@@ -56,7 +56,7 @@ function example4(param){
     return output; //and since the returned value is the output variable, the datatype of the output of the function will always be an array
 }
 
-// 6. The scope of a function is a block scope, it can access any global variable, but anything scoped globally cannot access variables/values in the function scope
+// 6. The scope of a function is a function, or local scope, it can access any global variable, but anything scoped globally cannot access variables/values in the function scope
 var ex = 2;
 function example5(input){
     let ex2 = 5;

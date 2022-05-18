@@ -50,6 +50,7 @@ var string2 = "This is also a string"; //or double quotes
 // 3. Booleans are either true or false
 var boolean = true;
 var boolean2 = false;
+var boolean3 = 1 < 10; //comparison expressions result in a boolean
 
 // 4. Arrays are an ordered list of various values
 var array = [1, 'arrays can store any kind of value', false, []];

@@ -21,6 +21,11 @@ while(x < 5){
     x++; //it is important to ensure the while loop has actions that will eventually cause the condition to be false, or else the loop will carry on infinitely
 }
 // for loops will run a specific number of times based on a start value and an end value
+// A for loop can be broken down like so:
+// for(start; stop; update) { // code to run}
+// start: defines a counting variable
+// stop: defines a condition thatwhen false stops the loop
+// update: defines how to increment or decrement the counting variable
 for(let i = 0; i < 10; i++){ //variable i serves as the starting value that is compared to the conditional
     console.log(i); //before running the code block i is checked with the conditional and if true the block runs
                     //and after each iteration of running the code block i is updated, in this case by increment
